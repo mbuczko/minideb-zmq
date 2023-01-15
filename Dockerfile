@@ -9,9 +9,6 @@ RUN /tmp/s6-overlay-amd64-installer / && rm /tmp/s6-overlay-amd64-installer
 # For statics
 RUN mkdir /var/www
 
-# Copy s6 init & service definitions.
-COPY etc/services.d /etc/services.d
-
 # The kill grace time is set to zero because our app handles shutdown through SIGTERM.
 ENV S6_KILL_GRACETIME=0
 
